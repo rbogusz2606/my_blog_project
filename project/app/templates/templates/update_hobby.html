@@ -1,0 +1,10 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <h2>Edytuj post</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save changes</button>
+    </form>
+{% endblock %}

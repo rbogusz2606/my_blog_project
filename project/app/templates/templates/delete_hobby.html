@@ -1,0 +1,10 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <h2>Usuń post</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Czy na pewno chcesz usunąć swój post?</p>
+        <button type="submit">Usuń post</button>
+    </form>
+{% endblock %}

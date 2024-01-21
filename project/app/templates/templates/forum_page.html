@@ -1,0 +1,19 @@
+{% extends "templates/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Forum</title>
+{% endblock title %}
+{% block css_files %}<link rel="stylesheet" href="{% static 'files/forum.css' %}">{% endblock  %}
+{% block content %}
+    <ul> 
+        {% for hobby in model %}
+            <li><strong>User: </strong>{{hobby.author}}</li>
+            <li><strong>Hobby: </strong>{{hobby.hobby}}</li>
+            <li><img src="{{hobby.image}}"></li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <button><a href="{% url "main" %}">Powrót do strony głównej</a></button>
+{% endblock content %}

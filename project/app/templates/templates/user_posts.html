@@ -1,0 +1,31 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% block css_files %}<link rel="stylesheet" href="{% static 'files/forum.css' %}">{% endblock  %}
+{% block content %}
+    {% if request.user.is_authenticated and request.user.is_superuser%}
+        <h1>Posty wszystkich użytkowników</h1>
+        {% for posts in all_posts %}
+            <strong>{{posts.author}}</strong>
+            <br>
+            {{posts.hobby}}
+            <br>
+            <img src="{{posts.image}}">
+            <br>
+            <small><a href="{% url "update" pk=posts.pk %}">Edit</a></small>
+            <br>
+            <small><a href="{% url "delete" pk=posts.pk %}">Delete</a></small>
+            <br>
+        {% endfor %}
+    {% else %}
+        <h2>Posty użytkownika: {{request.user}}</h2>
+        {% for post in posts  %}
+            {{post.hobby}}
+            <br>
+            <img src="{{post.image}}">
+            <br>
+            <small><a href="{% url "update" pk=post.pk %}">Edit</a></small>
+            <br>
+            <small><a href="{% url "delete" pk=post.pk %}">Delete</a></small>
+    {% endfor %}
+    {% endif %}
+{% endblock %}

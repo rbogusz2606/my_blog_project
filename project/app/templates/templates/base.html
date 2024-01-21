@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<html lang="en">
+<meta charset="UTF-8">
+{% block title %}
+    <title>Page Title</title>
+{% endblock title %}
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% block css_files %}<link rel="stylesheet" href="{% static 'style.css' %}">{% endblock css_files %}
+</head>
+
+<body>
+    {% block content %}
+content field
+{% endblock content %}
+</body>
+
+</html>

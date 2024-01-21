@@ -1,0 +1,10 @@
+{% extends "templates/base.html" %}
+{% block content %}
+    <h1>Post dodany!<h2>
+    
+    <p>Aby powrócić do strony głównej <button><a href="{% url "main" %}">Kliknij tutaj</a></button></p>
+    <p>Aby przejść do forum <button><a href="{% url "forum" %}">Kliknij tutaj</a></button></p>
+
+{% endblock content %}
+
+

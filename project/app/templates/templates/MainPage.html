@@ -1,0 +1,36 @@
+{% extends "templates/base.html" %}
+{% load static %}
+{% block title %}<title>Main Page</title>{% endblock title %}<title>Main Page</title>
+{% block css_files %}<link rel="stylesheet" href="{% static 'files/main.css' %}">{% endblock css_files %}
+{% block content %}
+
+
+{% if user and user.is_authenticated %}
+    <p>hello {{request.user}} <button><a href="{% url "user_posts" %}">Twoje Posty</a></button></p>
+    <p><button><a href="{% url 'logout' %}">Logout</a></button></p>
+{% else %}
+    
+{% endif %}
+<div class="welcome">
+    <h1>Witaj na mojej stronie!</h1> 
+    <h2>Poniżej opisałem aktywności, które mnie interesują</h2>
+
+
+</div>
+
+
+<div class="activities">
+    <ul>
+    {% for activity in activities %}
+        <li><button><a href="{{activity.get_absolute_url}}">{{activity.name}}</a></button></li>
+    {% endfor %}
+    </ul>
+
+</div>
+
+    <p>Może chciałbyś podzielić się swoim hobby? Jeżeli tak to <button><a href="{% url "register" %}">zarejestruj się</a></button>, lub <button><a href="{% url "login" %}">zaloguj</a></button>, a następnie przejdź do zakładki <button><a href="{% url "formularz" %}">formularz</a></button></p>
+
+    <div class="forum_button">
+        <p><button><h2><a href="{% url "forum" %}">Forum</a></h2></button></p>
+        </div>
+{% endblock content %}

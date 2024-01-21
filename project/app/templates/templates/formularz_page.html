@@ -1,0 +1,21 @@
+{% extends "templates/base.html" %}
+
+{% block title %}
+    <h1>Formularz</h1>
+{% endblock title %}
+
+
+{% block content %}
+
+<form method ="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Send</button>
+
+</form>
+<br>
+<button><a href="{% url "main" %}">Powrót do strony głównej</a></button>
+<br>
+<br>
+<button><a href="{% url "forum" %}">Przejdź do forum</a></button>
+{% endblock content %}

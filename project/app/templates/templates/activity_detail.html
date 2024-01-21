@@ -1,0 +1,12 @@
+{% extends "templates/base.html" %}
+{% load static %}
+{% block css_files %}<link rel="stylesheet" href="{% static 'files/detail.css' %}">{% endblock css_files %}
+{% block content %}
+
+<img src="{{activity.image.url}}">
+<br>
+<p>{{activity.description}}</p>
+
+<br>
+<button><a href="{% url "main" %}">Powrót do strony głównej</a></button>
+{% endblock content %}
