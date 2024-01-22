@@ -5,6 +5,9 @@ body {
 img {
     height: auto;
     width: 300px;
+    border-bottom: 1px;
+    border-bottom: 2px dotted;
+    border-bottom: solid blue
 }
 
 ul li {
@@ -17,7 +20,7 @@ ul li {
 /* Podstawowe style dla przycisków */
 button {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: solid #007bff;
     color: #fff;
     border: none;
     border-radius: 3px;

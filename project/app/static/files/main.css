@@ -23,3 +23,10 @@ button:hover {
 a {
     text-decoration: none;
 }
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
